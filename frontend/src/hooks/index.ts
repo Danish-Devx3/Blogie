@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { BACKEND_URL } from "../config";
 
 
-export interface Blogs{
+export interface Blog{
   "content": string;
   "title": string;
   "id": number;
@@ -16,7 +16,7 @@ export interface Blogs{
 export const useBlog = ({id}:{id:string}) => {
   const [loading, setLoading] = useState(true)
 
-  const [blog, setBlog] = useState<Blogs>();
+  const [blog, setBlog] = useState<Blog>();
 
   useEffect(()=>{
     axios.get(`${BACKEND_URL}/api/v1/blog/${id}`,{
@@ -39,9 +39,9 @@ export const useBlog = ({id}:{id:string}) => {
 
 
 export const useBlogs = () => {
-  const [loding, setLoding] = useState(true)
+  const [loading, setLoading] = useState(true)
 
-  const [blogs, setBlogs] = useState<Blogs[]>([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
 
   useEffect(()=>{
     axios.get(`${BACKEND_URL}/api/v1/blog/bulk`,{
@@ -50,13 +50,13 @@ export const useBlogs = () => {
         }
     }).then(response =>{
         setBlogs(response.data.blogs);
-        setLoding(false)
+        setLoading(false)
     })
 
   },[])
 
   return {
-    loding,
+    loading,
     blogs
   }
 

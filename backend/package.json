@@ -7,6 +7,8 @@
     "@100xdevs/medium-common": "^1.0.0",
     "@prisma/client": "^5.22.0",
     "@prisma/extension-accelerate": "^0.6.3",
+    "@types/bcryptjs": "^2.4.6",
+    "bcryptjs": "^3.0.3",
     "hono": "^4.0.5"
   },
   "devDependencies": {

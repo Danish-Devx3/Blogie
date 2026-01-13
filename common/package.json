@@ -1,9 +1,10 @@
 {
-  "name": "@danish/app-common",
+  "name": "@100xdevs/medium-common",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
